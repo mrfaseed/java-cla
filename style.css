@@ -1,0 +1,10 @@
+body{
+    scroll-behavior: smooth;
+}
+
+li{
+    font-weight: bold;
+}
+ul{
+font-weight: bold;
+}

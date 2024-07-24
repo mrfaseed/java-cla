@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="s.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Display Java Code</title>
+</head>
+<body>
+    <h1>Java Code </h1>
+    <div class="code-container">
+        <button class="copy-button" onclick="copyCode()">Copy</button>
+        <pre id="codeBlock">
+<span class="keyword">public</span> <span class="keyword">class</span> cla {
+    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) {
+        System.out.println(<span class="string">"\n\n\n for help , run \"java cla --help\" \n\n "</span>);
+        
+        <span class="keyword">if</span> (args.length == 0) {
+            System.out.println(<span class="string">"No arguments provided. To see help, run \"java cla --help\""</span>);
+            <span class="keyword">return</span>;
+        }
+
+        <span class="keyword">if</span> (args.length == 1) {
+            // Single argument
+            System.out.println(<span class="string">"Received single input: "</span> + args[0]);
+            System.out.println(<span class="string">"Length: "</span> + args[0].length());
+        } <span class="keyword">else if</span> (args.length == 2) {
+            // Two arguments
+            System.out.println(<span class="string">"Received two inputs:"</span>);
+            System.out.println(<span class="string">"Input 1: "</span> + args[0]);
+            System.out.println(<span class="string">"Input 2: "</span> + args[1]);
+            System.out.println(<span class="string">"Concatenated result: "</span> + args[0] + args[1]);
+        } <span class="keyword">else</span> {
+            System.out.println(<span class="string">"Invalid number of arguments. To see help, run \"java cla --help\""</span>);
+        }
+    }
+}
+        </pre>
+    </div>
+    <footer class="container text-center">
+        <code>developed by faseed </code>
+    </footer>
+    <script>
+        function copyCode() {
+            const codeBlock = document.getElementById('codeBlock');
+            const range = document.createRange();
+            range.selectNode(codeBlock);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand('copy');
+            window.getSelection().removeAllRanges();
+            alert('Code copied to clipboard!');
+        }
+    </script>
+</body>
+</html>
